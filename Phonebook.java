@@ -94,15 +94,6 @@ public class Phonebook {
         
         return index;
     }
-    
-    public static void printRow(String[][] data, int row) {
-        String s = "";
-        for (int i = 0; i < data[row].length; i++) {
-            s += data[row][i] + " ";
-        }
-        s += "\n";
-        System.out.println(s);
-    }
 }
 
 
