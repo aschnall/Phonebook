@@ -16,17 +16,6 @@ public class Phonebook {
                 System.out.println(Arrays.deepToString(data[last]));
             }
         }
-        
-                           
-//        String[] left = {"kajal", "1230231231"};
-//        String[] right = {"Hazard", "1231567890"};
-//        String[][] test = {{"kajal", "12302342324"},{"Hazard", "4234234"}};
-//        swap(test, 0, 1);
-//        printRow(test, 4);
-//        String[][] test = {{"Lorenzo", "9191919191"},{"Liam", "9090909090"},{"Kajal", "1231231231"},{"Hazard", "1230567890"}, {"Aram", "5757575757"}};
-//        String matcher = "R";
-//        System.out.println(Arrays.deepToString(test));
-//        System.out.println(findInitialIndex(test, matcher, 0));
     }
     
     public static String[][] readFromFile(String filename) {
@@ -70,7 +59,7 @@ public class Phonebook {
     }
     
     //search array - see if mid is greater than, less than or equal to matcher
-    //if equal - disregard right side of array
+    //if equal - check if element to left also equals matcher, if not return mid if so disregard right half of array and repeat search
     //if greater than - disregard left side of array and repeat search with right half of array
     //if less than - disregard right side of array and repeat search with left half of array
     public static int findInitialIndex(String[][] data, String matcher, int characteristic) {
@@ -94,8 +83,7 @@ public class Phonebook {
         return -1;
     }
     
-    //loop through array - if match hold onto index and continue, if no match at all return -1
-    
+    //loop through array - if match hold onto index and continue, if no match at all return -1   
     public static int findLastIndex(String[][] data, String matcher, int characteristic, int start) {
         int index = -1;
         for (int i = start; i < data.length; i++) {
